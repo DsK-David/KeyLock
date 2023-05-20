@@ -1,4 +1,4 @@
-var passwords = [];
+ var passwords = JSON.parse(localStorage.getItem('passwords')) || [];
 
     function generatePassword() {
       var length = document.getElementById('password-length').value;
@@ -12,12 +12,18 @@ var passwords = [];
 
       document.getElementById('password-output').value = password;
       passwords.push({ password: password, timestamp: new Date() });
+
+      savePasswords();
     }
 
     function copyPassword() {
       var passwordOutput = document.getElementById('password-output');
       passwordOutput.select();
       document.execCommand('copy');
+    }
+
+    function savePasswords() {
+      localStorage.setItem('passwords', JSON.stringify(passwords));
     }
 
     function showPasswords() {
@@ -29,3 +35,5 @@ var passwords = [];
         passwordsList.value += 'Data e hora de cópia: ' + item.timestamp.toLocaleString() + '\n\n';
       });
     }
+
+    showPasswords();
