@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>KeyLock</title>
+</head>
+<style>
+    
+body {
+  background: #111;
+  color: #fff;
+}
+
+.container {
+  color: #fff;
+}
+
+.btn-dark {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.btn-dark:hover {
+  background-color: #23272b;
+  color: #fff;
+}
+
+</style>
+<body>
+  <div class="container mt-4">
+    <h1>KeyLock</h1>
+    <div class="form-group">
+      <label for="password-length">Tamanho da Senha:</label>
+      <input type="number" id="password-length" class="form-control" min="1" max="50">
+    </div>
+    <button type="button" class="btn btn-primary" onclick="generatePassword()">Gerar Senha</button>
+    <button type="button" class="btn btn-secondary" onclick="copyPassword()">Copiar Senha</button>
+    <button type="button" class="btn btn-dark" onclick="showPasswords()">Mostrar Senhas Copiadas</button>
+    <div class="mt-4">
+      <label for="password-output">Senha Gerada:</label>
+      <input type="text" id="password-output" class="form-control" readonly>
+    </div>
+    <div class="mt-4">
+      <label for="passwords-list">Senhas Copiadas:</label>
+      <textarea id="passwords-list" class="form-control" rows="5" readonly></textarea>
+    </div>
+  </div>
+</body>
+<script src="main.js"></script>
+</html>
